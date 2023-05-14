@@ -1,0 +1,6 @@
+Host aur.archlinux.org
+  HostName aur.archlinux.org
+  StrictHostKeyChecking no
+  PreferredAuthentications publickey
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/AUR_GITHUB_KEY
