@@ -1,0 +1,19 @@
+name: raspberrypi-devicetree-git
+
+on:
+  schedule:
+    - cron:  '43 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - run: ./common/github_env_setup.sh
+      env:
+        AUR_GITHUB_KEY: ${{ secrets.AUR_GITHUB_KEY }}
+
+    - run: ./raspberrypi-devicetree-git/main.sh
